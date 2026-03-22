@@ -1,0 +1,109 @@
+// navbar.scss
+
+.navbar {
+    transition: $transition-base;
+
+    &.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: 0 4px 10px rgba($black, 0.1);
+        background-color: $gray-600;
+    }
+
+    .navbar-toggler {
+        .navbar-toggler-icon {
+            background-image: $navbar-light-toggler-icon-bg;
+            transition: $transition-base;
+        }
+
+        &[aria-expanded="true"],
+        &:not(.collapsed) {
+            .navbar-toggler-icon {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            .nav-item {
+                margin: 0 0.5rem;
+                transition: $transition-base;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                .nav-link {
+                    position: relative;
+                    color: $white;
+                    font-weight: $font-weight-medium;
+                    transition: $transition-base;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    letter-spacing: 0.5px;
+                    width: fit-content;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        bottom: -2px;
+                        left: 0;
+                        background: linear-gradient(90deg, transparent, $gray-700, transparent);
+                        background-size: 200% 100%;
+                        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                        transform-origin: left;
+                        opacity: 0;
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: $gray-700;
+
+                        &::before {
+                            width: 100%;
+                            opacity: 1;
+                            background-position: 100% 0;
+                            box-shadow: 0 0 10px $gray-700, 0 0 20px rgba($gray-700, 0.5);
+                        }
+                    }
+                }
+            }
+
+            .dropdown {
+                .dropdown-menu {
+                    .dropdown-item {
+                        font-weight: $font-weight-medium;
+                        color: $gray-900;
+                        transition: all 0.1 linear;
+
+                        &:hover {
+                            color: $white;
+                            background-color: $gray-700;
+                            border-radius: $border-radius-pill;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        @media (min-width: 0px) and (max-width: 1199.98px) {
+            background-color: $gray-600;
+            padding: 1rem;
+            border-radius: $border-radius;
+            margin-top: 1rem;
+            box-shadow: 0 5px 15px rgba($black, 0.1);
+
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        margin-bottom: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}

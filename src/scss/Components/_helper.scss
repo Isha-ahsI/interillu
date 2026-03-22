@@ -1,0 +1,326 @@
+// helper.scss
+
+body {
+  font-family: $font-family-base;
+  font-optical-sizing: auto;
+  font-weight: $font-weight-normal;
+  font-style: normal;
+}
+
+::selection {
+  background-color: $gray-700;
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section {
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.title {
+  font-family: $font-family-code;
+}
+
+// social icon scss
+.social-media {
+  .icon-back {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $gray-700;
+    background-color: rgba($white, 0.1);
+    border: 1px solid transparent;
+    border-radius: $border-radius-2xl;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      background-color: $gray-700;
+      color: $white;
+    }
+  }
+}
+
+// index1 file hero section
+.hero-section {
+  background:
+    url('../images/home_4/home_1.jpg') no-repeat center center/cover;
+}
+
+// index2 file hero section
+.zoom-bg {
+  background:
+    url('../images/home_4/home_2.jpg') no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  animation: zoomOut 10s ease-in-out infinite alternate;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+//  index3 file hero section
+.hero-section3 {
+  background: url('../images/home_4/home_3.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+  border-bottom-left-radius: 200px 150px;
+  border-bottom-right-radius: 200px 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+// overlay of all index pages hero
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba($black, 0.7) 0%, rgba($black, 0.3) 50%, rgba($black, 0.7) 100%);
+  z-index: 1;
+}
+
+// about pages hero section scss
+.hero-about {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $gray-600;
+  overflow: hidden;
+
+  .hero-img {
+    position: absolute;
+
+    @media (min-width: 992px) {
+      background: url('../images/home_4/home_4.jpg') no-repeat center center/cover;
+      width: 50%;
+      top: 12px;
+      right: 16px;
+      bottom: 12px;
+      border-top-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+
+    @media (min-width: 0px) and (max-width: 991.98px) {
+      background: linear-gradient(to right,
+          rgba($black, 0.7) 0%,
+          rgba($black, 0.3) 50%,
+          rgba($black, 0.7) 100%), url('../images/home_4/home_4.jpg') no-repeat center center/cover;
+      width: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 0;
+    }
+  }
+}
+
+// services herosection
+.services-hero {
+  .thumbs-slider-img {
+    height: 100vh;
+    top: 600px;
+
+    @media (min-width: 992px) {
+      width: 50%;
+      right: 0;
+      padding-right: 20px;
+    }
+
+    @media (min-width: 0px) and (max-width: 991.98px) {
+      width: 100%;
+      padding: 0px 20px;
+    }
+  }
+}
+
+// unique interior design
+.unique-interior-design-bg {
+  background: url('../images/home_2/img-3.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+
+  .overlay-light {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($white, 0.5);
+    z-index: 0;
+    backdrop-filter: blur(8px);
+  }
+}
+
+//  Word Animation 
+.word-animate {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  margin: 0 0.1em;
+  white-space: nowrap;
+}
+
+//  Responsive adjustments
+@media (max-width: 768px) {
+  .word-animate {
+    margin: 0 0.05em;
+  }
+}
+
+// quote-icon in testimonials section 
+.quote-icon1,
+.quote-icon2 {
+  font-size: 150px;
+  color: rgba($black, 0.1);
+  z-index: 0;
+}
+
+.quote-icon3,
+.quote-icon4 {
+  font-size: 100px;
+  color: rgba($black, 0.3);
+  z-index: 1;
+}
+
+.quote-icon1 {
+  top: 0;
+  left: 0;
+}
+
+.quote-icon2 {
+  bottom: 0;
+  right: 0;
+}
+
+.quote-icon3 {
+  top: 64px;
+  left: 56px;
+}
+
+.quote-icon4 {
+  bottom: 64px;
+  right: 56px;
+}
+
+// counterbox in portfolio herosec
+.hero-portfolio {
+  @media (min-width: 992px) {
+    .description {
+      color: rgba($black, 0.7);
+    }
+
+    .counter-box {
+      h2 {
+        color: $black;
+      }
+
+      p {
+        color: rgba($black, 0.7);
+      }
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 991.98px) {
+    .description {
+      color: $white;
+    }
+
+    .counter-box {
+
+      h2,
+      p {
+        color: $white;
+      }
+    }
+  }
+}
+
+// projects intro
+.project-img {
+  position: relative;
+
+  .bookmark-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba($black, 0.7);
+    color: $white;
+    z-index: 1;
+    margin: 16px 16px 0px 0px;
+    padding: 10px 12px;
+    line-height: 0;
+    border-radius: $border-radius-2xl;
+    cursor: pointer;
+  }
+
+}
+
+// glass effect
+.glass-effect {
+  background-color: rgba($white, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+// services details
+.service-section {
+  padding: 100px 0;
+
+  @media (min-width: 0px) and (max-width: 991.98px) {
+    overflow: hidden;
+  }
+
+  .side-info-div {
+    position: sticky;
+    top: 85px;
+
+    .service-accordion {
+      .accordion-item {
+        border: 2px solid $gray-700;
+        overflow: hidden;
+        border-radius: 4px;
+
+        .accordion-button {
+          box-shadow: none;
+          font-weight: $font-weight-medium;
+
+          &:not(.collapsed) {
+            background-color: transparent;
+            color: $gray-700;
+            border-bottom: 1px solid rgba($gray-500, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  .custom-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+}

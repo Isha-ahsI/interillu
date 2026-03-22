@@ -1,0 +1,15 @@
+// backgroud.scss
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color} {
+        background-color: $value !important;
+    }
+
+    @for $i from 1 through 10 {
+        $alpha: math.div($i, 10);
+
+        .bg-#{$color}-#{$i} {
+            background-color: rgba($value, $alpha) !important;
+        }
+    }
+}

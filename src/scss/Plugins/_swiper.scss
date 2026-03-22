@@ -1,0 +1,248 @@
+// swiper.scss
+
+.swiper {
+
+    //innovation showcase swiper
+    &.showCaseSwiper {
+        .swiper-wrapper {
+            .swiper-slide {
+                .img-card {
+                    filter: grayscale(1);
+                    transform: scale(0.9);
+                    opacity: 0.75;
+                    box-shadow: $box-shadow;
+                    transition: $transition-base;
+
+                    .info-box {
+                        position: absolute;
+                        bottom: 15px;
+                        left: 70%;
+                        transform: translateX(-50%) scale(0.3);
+                        background-color: $white;
+                        color: $black;
+                        height: 40%;
+                        width: 50%;
+                        border-radius: $border-radius;
+                        padding: 0.5rem;
+                        box-shadow: 0 4px 15px rgba($black, 0.2);
+                        opacity: 0;
+                        transition: $transition-base;
+                        overflow: hidden;
+                    }
+                }
+
+            }
+
+            .swiper-slide-active {
+                .img-card {
+                    filter: grayscale(0);
+                    transform: scale(1);
+                    opacity: 1;
+
+                    .info-box {
+                        transform: translateX(-50%) scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    // testimonials swiper
+    &.testiSwiper {
+        @media (min-width: 576px) {
+            padding-bottom: 100px;
+        }
+
+        @media (min-width: 0px) and (max-width: 575.98px) {
+            padding-bottom: 80px;
+        }
+
+        .swiper-pagination {
+            &.swiper-pagination-bullets-dynamic {
+                .swiper-pagination-bullet {
+                    opacity: 0.5;
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                    background-color: transparent;
+                    filter: grayscale(1);
+
+                    @media (min-width: 576px) {
+                        width: 80px;
+                        height: 80px;
+                    }
+
+                    @media (min-width: 0px) and (max-width: 575.98px) {
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    .user-img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: $border-radius-2xl;
+                    }
+
+                    &.swiper-pagination-bullet-active {
+                        filter: grayscale(0);
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+
+                    &.swiper-pagination-bullet-active-prev,
+                    &.swiper-pagination-bullet-active-next {
+                        transform: scale(0.7);
+                    }
+
+                    &.swiper-pagination-bullet-active-next-next,
+                    &.swiper-pagination-bullet-active-prev-prev {
+                        transform: scale(0.5);
+                    }
+                }
+
+            }
+        }
+    }
+
+    //latest projects swiper 
+    &.latestSwiper {
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+    }
+
+    // services Hero swiper
+    &.serviceHeroSwiper2 {
+        .swiper-wrapper {
+            .swiper-slide {
+                border-radius: $border-radius-lg;
+                filter: grayscale(1);
+                transition: $transition-base;
+                overflow: hidden;
+
+                &.swiper-slide-thumb-active {
+                    filter: grayscale(0);
+                }
+
+                .service-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    // services Details Img swiper
+    &.serviceSwiper {
+
+        .button-prev,
+        .button-next {
+            background-color: transparent;
+            color: $gray-700;
+            border: 1px solid $gray-700;
+            border-radius: $border-radius-lg;
+            padding: 8px 16px;
+            transition: $transition-base;
+
+            &:hover {
+                background-color: $gray-700;
+                color: $white;
+                transform: scale(0.9);
+            }
+        }
+    }
+}
+
+//innovation showcase swiper buttons
+.swiper-nav {
+
+    .prev-btn,
+    .next-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            background-color: $black;
+            color: $white;
+            transition: $transition-base;
+            border-radius: $border-radius-2xl;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+                transform: scale(0.9);
+                background-color: rgba($gray-500, 0.3);
+                box-shadow: 0 0rem 0.75rem $white;
+            }
+        }
+    }
+}
+
+// latest projects swiper shadow effect
+.swiper-side-shadow {
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    &::before {
+        left: 0;
+
+        @media (min-width: 576px) {
+            background: linear-gradient(to right, rgba($white, 1) 0%, rgba($white, 0) 100px);
+        }
+
+        @media (min-width: 0px) and (max-width: 575.98px) {
+            background: linear-gradient(to right, rgba($white, 1) 0%, rgba($white, 0) 16px);
+        }
+    }
+
+    &::after {
+        right: 0;
+
+        @media (min-width: 576px) {
+            background: linear-gradient(to left, rgba($white, 1) 0%, rgba($white, 0) 100px);
+        }
+
+        @media (min-width: 0px) and (max-width: 575.98px) {
+            background: linear-gradient(to left, rgba($white, 1) 0%, rgba($white, 0) 16px);
+        }
+
+    }
+}
+
+//services hero swiper buttons
+.services-hero {
+    .swiper-button {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            width: 30px;
+            color: $gray-700;
+            background-color: $white;
+            border-radius: $border-radius-2xl;
+            padding: 8px;
+            transition: $transition-base;
+
+            &:hover {
+                background-color: $gray-700;
+                color: $white;
+                transform: scale(0.9);
+            }
+        }
+    }
+}

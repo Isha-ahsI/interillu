@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/meta.html', { title: 'Interilu' })
+    %%include('partials/css.html')
+</head>
+
+<body>
+    <!-- navbar -->
+    %%include('./partials/header.html',{extraClass:"navbar-expand-xl",linkProjects:"#project"})
+
+    <!-- s1 hero-section primary-->
+    <section class="min-vh-100 hero-section4 position-relative overflow-hidden">
+        <div id="heroCarousel" class="carousel hero4-carousel overflow-hidden slide position-relative carousel-fade "
+            data-bs-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators mt-2">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner position-relative overflow-hidden">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/home_4/home_1.jpg" class=" object-fit-cover" alt="Interior Design 1">
+                    <div class="carousel-caption z-2 d-flex flex-column justify-content-center ">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-10 col-xl-8 text-center">
+                                    <span
+                                        class="badge bg-primary-3 text-primary px-4 py-2 rounded-pill mb-3 d-inline-flex align-items-center">
+                                        <i class="fas fa-cogs me-2"></i> Premium Interior Solutions
+                                    </span>
+                                    <h1 class="display-4 title text-white mb-4">Live in a Space That <span
+                                            class="text-primary">Inspires</span> You</h1>
+                                    <p class="lead text-white-75">Inspired spaces begin with inspired design — a
+                                        thoughtful blend of
+                                        vision, creativity, and functionality.</p>
+                                    <div class="d-flex flex-wrap justify-content-center mb-4 gap-3">
+                                        <a href="#contact" class="btn btn-primary rounded-pill">Start Your Project</a>
+                                        <a href="#portfolio" class="btn btn-light rounded-pill">View Portfolio</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="position-absolute w-100  bg-dark bg-opacity-50"></div>
+                    <img src="images/home_4/home_2.jpg" class=" object-fit-cover" alt="Interior Design 2">
+                    <div class="carousel-caption z-2 d-flex flex-column justify-content-center ">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-10 col-xl-8 text-center">
+                                    <span
+                                        class="badge bg-primary-3 text-primary px-4 py-2 rounded-pill mb-3 d-inline-flex align-items-center">
+                                        <i class="fas fa-cogs me-2"></i> Modern & Functional
+                                    </span>
+                                    <h1 class="display-4 title text-white mb-4">Where <span
+                                            class="text-primary">Comfort</span> Meets
+                                        Style</h1>
+                                    <p class="lead text-white-75 ">Elevate everyday living with intelligent design and
+                                        effortlessly
+                                        stylish interiors.</p>
+                                    <div class="d-flex flex-wrap justify-content-center mb-4 gap-3">
+                                        <a href="#services" class="btn btn-primary rounded-pill">Our Services</a>
+                                        <a href="#contact" class="btn btn-light rounded-pill">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="position-absolute w-100  bg-dark bg-opacity-50"></div>
+                    <img src="images/home_4/home_3.jpg" class=" object-fit-cover" alt="Interior Design 3">
+                    <div class="carousel-caption z-2 d-flex flex-column justify-content-center ">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-10 col-xl-8 text-center">
+                                    <span
+                                        class="badge bg-primary-3 text-primary px-4 py-2 rounded-pill mb-3 d-inline-flex align-items-center">
+                                        <i class="fas fa-cogs me-2"></i> Premium Design
+                                    </span>
+                                    <h1 class="display-4 title text-white mb-4">Turning <span
+                                            class="text-primary">Ideas</span> Into
+                                        Reality</h1>
+                                    <p class="lead text-white-75 mb-4">Personalized interiors that exude luxury, warmth,
+                                        and character.
+                                    </p>
+                                    <div class="d-flex flex-wrap justify-content-center mb-4 gap-3">
+                                        <a href="#project" class="btn btn-primary rounded-pill">Our Projects</a>
+                                        <a href="#about" class="btn btn-light rounded-pill">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- other sections in home page -->
+    %%include('./partials/home.html')
+
+    <!-- Footer -->
+    %%include('./partials/footer.html')
+
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="plugins/gsap/gsap.min.js"></script>
+    <script src="plugins/gsap/ScrollTrigger.min.js"></script>
+    <script src="js/combined.min.js"></script>
+    <script src="js/pages/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+// utilities.scss
+
+@each $color, $value in $theme-colors {
+    .text-#{$color} {
+        color: $value !important;
+    }
+}
