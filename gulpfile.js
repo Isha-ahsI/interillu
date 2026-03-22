@@ -55,7 +55,7 @@ const thirdParty = () => {
 // Cleaning the dist directory
 async function clean() {
     console.log('🧹 Cleaning build directory...');
-    await del(folder.dist);
+    await deleteAsync(folder.dist);
     console.log('✅ Build directory cleaned!');
 }
 
